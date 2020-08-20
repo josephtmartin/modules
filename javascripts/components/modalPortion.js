@@ -1,9 +1,8 @@
 import { getCart, emptyCart } from './../helpers/data/cartData.js';
 import { cartTotal } from './../components/cartTotal.js';
 
-
 const makeCartModal = () => {
-    return `<div class="modal fade" id="buy-modal" tabindex="-1" role="dialog" aria-labelledby="buy-modalLabel" aria-hidden="true">
+  return `<div class="modal fade" id="buy-modal" tabindex="-1" role="dialog" aria-labelledby="buy-modalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -35,8 +34,8 @@ const makeCartModal = () => {
         </div>
       </div>
     </div>
-  </div>`
-}
+  </div>`;
+};
 
 const showCartItems = () => {
   let obj = {};
@@ -51,7 +50,7 @@ const showCartItems = () => {
   });
 
   Object.keys(obj).map((title) => {
-    $("tbody").append(
+    $('tbody').append(
       `<tr>
           <td>${title}</td>
           <td>${obj[title].quantity}</td>
@@ -62,19 +61,18 @@ const showCartItems = () => {
 };
 
 const chargeIt = (ccNum) => {
-  if (ccNum === "") {
-    $("#error-message").html("Please enter a credit card number");
+  if (ccNum === '') {
+    $('#error-message').html('Please enter a credit card number');
   } else {
     emptyCart();
-    $(".modal-backdrop").remove();
-    $("#buy-modal").modal("hide");
+    $('.modal-backdrop').remove();
+    $('#buy-modal').modal('hide');
 
-    $("#cart").html(
+    $('#cart').html(
       `<h2 style="margin-top: 100px;">Thank you for your order.</h2>
         <p>Your credit card number was ${ccNum} has been charged.</p>`
     );
   }
 };
 
-export { makeCartModal, showCartItems, chargeIt }
-
+export { makeCartModal, showCartItems, chargeIt };

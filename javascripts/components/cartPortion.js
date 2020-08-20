@@ -1,7 +1,7 @@
-import { cartTotal } from './cartTotal.js'
+import { cartTotal } from './cartTotal.js';
 
 const makeCartCart = () => {
-    return `<i class="fas fa-shopping-cart cart"></i>
+  return `<i class="fas fa-shopping-cart cart"></i>
             <div id="cart-stuff">
             <h3>My Cart</h3>
             <div id="cart-thumb"></div>
@@ -9,7 +9,7 @@ const makeCartCart = () => {
                 <div>$${cartTotal().toFixed(2)}</div>
             </div>
                 <button class="btn btn-danger" data-toggle="modal" data-target="#buy-modal" id="checkout">Checkout</button>
-            </div>`
-}
+            </div>`;
+};
 
-export { makeCartCart }
+export { makeCartCart };

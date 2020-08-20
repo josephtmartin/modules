@@ -12,4 +12,4 @@ const emptyCart = () => {
   cart.length = 0;
 };
 
-export { setCart, getCart, emptyCart }
+export { setCart, getCart, emptyCart };
